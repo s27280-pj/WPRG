@@ -1,0 +1,3 @@
+http://example.com;Example website
+http://google.com;Google
+http://facebook.com;Facebook

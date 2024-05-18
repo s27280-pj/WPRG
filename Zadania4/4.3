@@ -1,0 +1,22 @@
+<?php
+$file = 'links.txt';
+
+if (!file_exists($file)) {
+    die("Plik z odnośnikami nie istnieje.");
+}
+
+$links = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+if ($links === false) {
+    die("Błąd podczas odczytu pliku.");
+}
+
+echo "<h1>Lista odnośników</h1>";
+echo "<ul>";
+
+foreach ($links as $link) {
+    list($url, $description) = explode(';', $link);
+    echo "<li><a href=\"$url\">$description</a></li>";
+}
+
+echo "</ul>";
+?>
